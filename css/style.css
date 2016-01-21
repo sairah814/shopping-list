@@ -1,0 +1,164 @@
+/* CSS reset
+(all the browsers will see the website in the same by setting every tag to 0 (the website will look the same on all browsers))
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    /*The box-sizing property is used to tell the browser what the sizing properties (width and height) should include border-box.*/
+    box-sizing: border-box;
+    /*reset Chrome user agent styles*/
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-before: 0px;
+    -webkit-padding-after: 0px;
+    -webkit-padding-start: 0px;
+    -webkit-padding-end: 0px;
+}
+
+
+/* General styles
+(the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules bellow (h2, h3, h4, h5, h6, p, a, ul, li))
+*/
+
+body {
+    background-image: url(../images/168H.jpg);
+    /*no-repeat center center fixed;
+    */
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.main {
+    margin-top: 5rem;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid red;
+    text-align: center;
+}
+
+
+/* Header styles
+(all the styles inside the < header > or < nav > tags)
+*/
+
+h1 {
+    font-size: 3rem;
+    color: #f6f4f4;
+    margin-top: 1rem;
+    font-family: 'Dancing Script', cursive, sans-serif;
+}
+
+h2 {
+    text-align: left;
+    margin-left: 34.5%;
+    margin-top: 1.5rem;
+    margin-bottom: 0rem;
+    color: #f6f4f4;
+    font-size: 1.8rem;
+    font-family: 'Dancing Script', cursive, sans-serif;
+}
+
+
+/* Content styles
+(all the styles inside the < sections > or < aside > tags)
+*/
+
+
+/*This area is defining all lists, with special attention to #active-list*/
+
+input#add-item {
+    border: 2px solid lightgray;
+    border-radius: 3px;
+    background-color: floralwhite;
+    opacity: .5;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 3rem;
+    width: 15rem;
+}
+
+button#submit {
+    background: none;
+    font-size: 2rem;
+    vertical-align: middle;
+    color: #163283;
+}
+
+button#submit:hover {
+    color: black;
+}
+
+#active-list li,
+#done li {
+    list-style: none;
+    font-family: Arial, sans-serif;
+    background-color: #f6f4f4;
+    color: #163283;
+    width: 15rem;
+    display: block;
+    text-align: left;
+    vertical-align: middle;
+    margin-left: 34.5%;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    line-height: 2rem;
+    border-radius: 3px;
+}
+
+.unchecked {
+    display: inline-block;
+    margin-right: 1em;
+    margin-left: .3rem;
+}
+
+.unchecked:hover .fa-circle-o:before {
+    content: "\f05d";
+}
+
+.fa-remove {
+    display: inline-block;
+    float: right;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    margin-right: .3rem;
+}
+
+.fa-remove:hover {
+    color: black;
+}
+
+
+/*This area is for #done only*/
+
+#done li {
+    text-decoration: line-through;
+    margin-top: 0;
+}
+
+.checked {
+    display: inline-block;
+    margin-right: 1em;
+    margin-left: .3rem;
+}
+
+.checked:hover .fa-check-circle-o:before {
+    content: "\f10c";
+}
+
+
+/* Footer styles
+(all the styles inside the < footer > tag)
+*/
+
+
+/* Responsive styles
+(the very last module in the CSS, contains all the media queries and it is dealing with the compatibility with mobiles and tablets)
+*/
