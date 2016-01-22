@@ -41,12 +41,13 @@ body {}
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    border: 1px solid red;
     text-align: center;
 }
 
 .wrapper {
-    width: 100%;
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 
@@ -62,13 +63,11 @@ h1 {
 }
 
 h2 {
-    margin-right: 12%;
-    margin-top: 1.5rem;
-    margin-bottom: .5rem;
     color: #f6f4f4;
     font-size: 1.8rem;
     font-family: 'Dancing Script', cursive, sans-serif;
-    display: inline-block;
+    display: inline;
+    margin-right: 20%;
 }
 
 
@@ -87,18 +86,21 @@ input#add-item {
     margin-top: 1rem;
     margin-bottom: 1rem;
     height: 3rem;
-    width: 15rem;
+    width: 40%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 button#submit {
     background: none;
-    font-size: 2rem;
+    font-size: 3rem;
     vertical-align: middle;
-    color: #163283;
+    color: #093B15;
+    margin-bottom: .25rem;
 }
 
 button#submit:hover {
-    color: black;
+    color: #348848;
 }
 
 #active-list li,
@@ -106,8 +108,8 @@ button#submit:hover {
     list-style: none;
     font-family: Arial, sans-serif;
     background-color: #f6f4f4;
-    color: #163283;
-    width: 15rem;
+    color: #093B15;
+    width: 100%;
     display: block;
     text-align: left;
     vertical-align: middle;
@@ -127,6 +129,7 @@ button#submit:hover {
 
 .unchecked:hover .fa-circle-o:before {
     content: "\f05d";
+    color: #348848;
 }
 
 .fa-remove {
@@ -138,11 +141,25 @@ button#submit:hover {
 }
 
 .fa-remove:hover {
-    color: black;
+    color: #348848;
 }
 
 
 /*This area is for #done only*/
+
+#done-head {
+    padding-top: 1.5rem;
+    padding-bottom: .8rem;
+}
+
+#clearall {
+    background: none;
+    display: inline;
+    margin-top: 0;
+    font-size: .8rem;
+    color: floralwhite;
+    margin-left: 40%;
+}
 
 #done li {
     text-decoration: line-through;
@@ -153,19 +170,12 @@ button#submit:hover {
     display: inline-block;
     margin-right: 1rem;
     margin-left: .3rem;
+    color: #093B15;
 }
 
 .checked:hover .fa-check-circle-o:before {
     content: "\f10c";
-}
-
-#clearall {
-    background: none;
-    display: inline-block;
-    margin-top: 0;
-    margin-right: 5%;
-    font-size: .8rem;
-    color: floralwhite;
+    color: #348848;
 }
 
 
