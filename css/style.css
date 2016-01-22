@@ -25,15 +25,16 @@
 (the styles used everywhere in the page (like the Body) or styles which are used in more than 2 of the modules bellow (h2, h3, h4, h5, h6, p, a, ul, li))
 */
 
-body {
-    background-image: url(../images/168H.jpg);
-    /*no-repeat center center fixed;
-    */
+html {
+    background: rgba(0, 0, 0, 0) url("../images/168H.jpg") no-repeat center center fixed;
+    /*no-repeat center center fixed*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
+
+body {}
 
 .main {
     margin-top: 5rem;
@@ -42,6 +43,10 @@ body {
     margin-right: auto;
     border: 1px solid red;
     text-align: center;
+}
+
+.wrapper {
+    width: 100%;
 }
 
 
@@ -57,13 +62,13 @@ h1 {
 }
 
 h2 {
-    text-align: left;
-    margin-left: 34.5%;
+    margin-right: 12%;
     margin-top: 1.5rem;
-    margin-bottom: 0rem;
+    margin-bottom: .5rem;
     color: #f6f4f4;
     font-size: 1.8rem;
     font-family: 'Dancing Script', cursive, sans-serif;
+    display: inline-block;
 }
 
 
@@ -106,7 +111,8 @@ button#submit:hover {
     display: block;
     text-align: left;
     vertical-align: middle;
-    margin-left: 34.5%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: .5rem;
     margin-bottom: .5rem;
     line-height: 2rem;
@@ -145,12 +151,21 @@ button#submit:hover {
 
 .checked {
     display: inline-block;
-    margin-right: 1em;
+    margin-right: 1rem;
     margin-left: .3rem;
 }
 
 .checked:hover .fa-check-circle-o:before {
     content: "\f10c";
+}
+
+#clearall {
+    background: none;
+    display: inline-block;
+    margin-top: 0;
+    margin-right: 5%;
+    font-size: .8rem;
+    color: floralwhite;
 }
 
 

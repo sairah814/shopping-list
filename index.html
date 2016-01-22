@@ -14,26 +14,28 @@
         <h1>Today's Shopping List</h1>
         <input id="add-item" type="text" name="list-item" placeholder="Add an item">
         <button id="submit"><i class="fa fa-plus-square"></i></button>
-        <ul id="active-list">
-            <li>
-                <span class="unchecked"><i class="fa fa-circle-o"></i></span>Item 1
-                <i class="fa fa-remove"></i>
-            </li>
-            <li>Item 2</li>
-        </ul>
-        <div id="done">
-            <h2>Done</h2>
-            <button id="clearall"></button>
-            <ul id="done-list">
+        <div class="wrapper">
+            <ul id="active-list">
                 <li>
-                    <span class="checked"><i class="fa fa-check-circle-o"></i></span>Item 1
+                    <span class="unchecked"><i class="fa fa-circle-o"></i></span>Item 1
                     <i class="fa fa-remove"></i>
                 </li>
-                <li>
-                    <button></button>Item 2
-                    <button></button>
-                </li>
+                <li>Item 2</li>
             </ul>
+            <div id="done">
+                <h2>Done</h2>
+                <button id="clearall">Clear All</button>
+                <ul id="done-list">
+                    <li>
+                        <span class="checked"><i class="fa fa-check-circle-o"></i></span>Item 1
+                        <i class="fa fa-remove"></i>
+                    </li>
+                    <li>
+                        <button></button>Item 2
+                        <button></button>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
     <section class="sidenav"></section>
