@@ -22,10 +22,15 @@ $(document).ready(function () {
         $('#active-list').prepend("<li>" + styleunchecked + newitem + styleremove + "</li>");
     }
     // If you check an item, it is moved to 'Done'
-    $(document).on('click', '.unchecked', function () {
-        var $moveitem = $(this);
-        $(this).closest('li').remove();
-        $('#done-list').prepend("<li>" + stylechecked + $moveitem + "</li")
+    $('.unchecked').click(function () {
+        var moveitem = $(this).closest('li');
+        /*$(moveitem).slideUp("slow").prependTo('#done-list');
+        $(moveitem).slideToggle("slow");*/
+        /*.prependTo('#done-list');*/
+        $(moveitem).slideToggle("slow", function () {
+            $('#done-list').prepend(moveitem);
+            $(moveitem).slideToggle("slow");
+        });
     });
 
     // If you remove the item, it is removed from the list
@@ -34,4 +39,7 @@ $(document).ready(function () {
     });
 
     // If you click clear all then all items are removed from the 'Done' list
+    $(document).on('click', '#clearall', function () {
+        $('#done-list').remove();
+    });
 });
