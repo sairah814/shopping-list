@@ -3,6 +3,7 @@
 
 // On pressing enter you add the item to a list underneath
 $(document).ready(function () {
+    //Add an item to the list
     function getItem() {
         $(document).keydown(function (key) {
             if (key.keyCode == 13) {
@@ -10,29 +11,58 @@ $(document).ready(function () {
                 $('#add-item').val('');
             }
         });
+        $('#submit').click(function () {
+            itemAdder();
+            $('#add-item').val('');
+        });
     }
     getItem();
 
     var styleunchecked = '<span class="unchecked"><i class="fa fa-circle-o"></i></span>';
     var styleremove = '<span class="remove"><i class="fa fa-remove"></i></span>';
-    var stylechecked = '';
+    var stylechecked = '<span class="checked"><i class="fa fa-check-circle-o"></i></span>';
 
     function itemAdder() {
         var newitem = $('#add-item').val();
-        $('#active-list').prepend("<li>" + styleunchecked + newitem + styleremove + "</li>");
+        if (newitem.length !== 0) {
+            $('#active-list').prepend("<li>" + styleunchecked + newitem + styleremove + "</li>");
+        } else {
+            alert("Please enter an item to add");
+        }
     }
     // If you check an item, it is moved to 'Done'
-    $('.unchecked').click(function () {
+    $(document).on('click', '.unchecked', function () {
         var moveitem = $(this).closest('li');
-        /*$(moveitem).slideUp("slow").prependTo('#done-list');
-        $(moveitem).slideToggle("slow");*/
-        /*.prependTo('#done-list');*/
         $(moveitem).slideToggle("slow", function () {
+            $(moveitem).find('.unchecked').replaceWith(stylechecked);
             $('#done-list').prepend(moveitem);
-            $(moveitem).slideToggle("slow");
+            $(moveitem).slideToggle();
         });
     });
 
+    //Only show done list when there is something in it
+
+    /*function appearDone() {
+        var donelistitems = $('#done-list').children();
+        var donecount = donelistitems.length;
+        if (donecount == 0) {
+            $('#done-head').hide();
+        }
+        if (donecount > 0) {
+            $('#done-head').show();
+        }
+    }
+    appearDone();*/
+
+    //You can move a done item back to the active list
+    $(document).on('click', '.checked', function () {
+        var returnitem = $(this).closest('li');
+        $(returnitem).slideToggle(function () {
+            $(returnitem).find('.checked').replaceWith(styleunchecked);
+            $('#active-list').prepend(returnitem);
+            $(returnitem).slideToggle("slow");
+        });
+    });
     // If you remove the item, it is removed from the list
     $(document).on('click', '.remove', function () {
         $(this).closest('li').remove();
@@ -40,6 +70,6 @@ $(document).ready(function () {
 
     // If you click clear all then all items are removed from the 'Done' list
     $(document).on('click', '#clearall', function () {
-        $('#done-list').remove();
+        $('#done-list').find('li').remove();
     });
 });
